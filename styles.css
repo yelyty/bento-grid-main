@@ -1,0 +1,23 @@
+
+.box { 
+	border-radius: 10px;
+}
+
+.box-purple-500 {
+	background-color: #7551DC;
+}
+
+.box-purple-100 { 
+	background-color: #DBD1FC;
+}
+.box-white {
+	background-color: #FFFFFF;
+}
+
+.box-yellow-500 {
+	background-color: #FFCC6A;
+}
+
+.box-yellow-100{
+	background-color: #F9EEE2;
+}
