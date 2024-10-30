@@ -21,3 +21,55 @@
 .box-yellow-100{
 	background-color: #F9EEE2;
 }
+
+.item1 {
+	color: #FFFFFF;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	padding-left: 32px;
+	padding-right: 32px;
+	text-align: center;
+}
+
+.item h1 { 
+	font-size: 42px;
+}
+
+.item1 img { 
+	height: 32px;
+	width: 192px;
+}
+
+.item1 span {
+ color: #FFCC6A;
+}
+
+.item1 p {
+	font-size: 20px;
+}
+
+/* General Styles for All Devices */
+.bento-grid {
+	display: grid;
+	gap: 10px;
+  }
+  
+/* Mobile layout (375px) - 1 column */
+@media (max-width: 375px) {
+	.bento-grid {
+	  grid-template-columns: 1fr; /* 1 column for mobile */
+	}
+  
+	/* Each item takes up the full width in a single column layout */
+	.item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8 {
+	  grid-column: span 1;
+	  grid-row: span 1;
+	}
+  }
+  
+
+
