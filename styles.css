@@ -59,6 +59,11 @@ body {
   --spacing-300: 24px;
   --spacing-200: 16px;
   --spacing-100: 8px;
+
+  /* Breakpoints */
+  --breakpoint-sm: 350px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1440px;
 }
 
 .container {
@@ -71,202 +76,345 @@ body {
 }
 
 .card {
-	border-radius: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card-purple-500 {
-	background-color: var(--purple-500);
+  background-color: var(--purple-500);
 }
 
 .card-purple-100 {
-	background-color: var(--purple-100);
+  background-color: var(--purple-100);
 }
 
 .card-white {
-	background-color: var(--white);
+  background-color: var(--white);
 }
 
 .card-yellow-500 {
-	background-color: var(--yellow-500);
+  background-color: var(--yellow-500);
 }
 
 .card-yellow-100 {
-	background-color: var(--yellow-100);
+  background-color: var(--yellow-100);
 }
 
 h1 {
-	font-size: var(--text-preset-1-size);
-	line-height: var(--text-preset-1-line-height);
-	letter-spacing: var(--text-preset-1-letter-spacing);
-	font-weight: var(--text-preset-1-weight);
+  font-size: var(--text-preset-1-size);
+  line-height: var(--text-preset-1-line-height);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  font-weight: var(--text-preset-1-weight);
 }
 
 h2 {
-	font-size: var(--text-preset-2-size);
-	line-height: var(--text-preset-2-line-height);
-	letter-spacing: var(--text-preset-2-letter-spacing);
-	font-weight: var(--text-preset-2-weight);
+  font-size: var(--text-preset-2-size);
+  line-height: var(--text-preset-2-line-height);
+  letter-spacing: var(--text-preset-2-letter-spacing);
+  font-weight: var(--text-preset-2-weight);
 }
 
 h3 {
-	font-size: var(--text-preset-3-size);
-	line-height: var(--text-preset-3-line-height);
-	letter-spacing: var(--text-preset-3-letter-spacing);
-	font-weight: var(--text-preset-3-weight);
+  font-size: var(--text-preset-3-size);
+  line-height: var(--text-preset-3-line-height);
+  letter-spacing: var(--text-preset-3-letter-spacing);
+  font-weight: var(--text-preset-3-weight);
+}
+
+p {
+  font-size: var(--text-preset-4-size);
+  line-height: var(--text-preset-4-line-height);
+  letter-spacing: var(--text-preset-4-letter-spacing);
+  font-weight: var(--text-preset-4-weight);
 }
 
 .bento-grid {
-	display: grid;
-	gap: 32px;
-	grid-template-columns: repeat(4, 256px); /* Fixed 4 columns */
-	grid-template-rows: repeat(10, 61px); /* 10 equal rows */
-	grid-template-areas:
-		"card7 card1 card1 card4"
-		"card7 card1 card1 card4"
-		"card7 card1 card1 card4"
-		"card7 card1 card1 card4"
-		"card7 card2 card3 card4"
-		"card8 card2 card3 card4"
-		"card8 card2 card3 card4"
-		"card8 card6 card5 card5"
-		"card8 card6 card5 card5"
-		"card8 card6 card5 card5";
-	max-width: 1440px; /* For a fixed desktop width */
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(4, 256px); /* Fixed 4 columns */
+  grid-template-rows: repeat(10, 61px); /* 10 equal rows */
+  grid-template-areas:
+    "card7 card1 card1 card4"
+    "card7 card1 card1 card4"
+    "card7 card1 card1 card4"
+    "card7 card1 card1 card4"
+    "card7 card2 card3 card4"
+    "card8 card2 card3 card4"
+    "card8 card2 card3 card4"
+    "card8 card6 card5 card5"
+    "card8 card6 card5 card5"
+    "card8 card6 card5 card5";
+  max-width: var(--breakpoint-lg);
 }
 
-.card1 { grid-area: card1; }
-.card2 { grid-area: card2; }
-.card3 { grid-area: card3; }
-.card4 { grid-area: card4; }
-.card5 { grid-area: card5; }
-.card6 { grid-area: card6; }
-.card7 { grid-area: card7; }
-.card8 { grid-area: card8; }
-
-.card1, .card7, .card4 {
-	padding: var(--spacing-400);
-	display: flex;
-	flex-direction: column;
+.card1 {
+  grid-area: card1;
+}
+.card2 {
+  grid-area: card2;
+}
+.card3 {
+  grid-area: card3;
+}
+.card4 {
+  grid-area: card4;
+}
+.card5 {
+  grid-area: card5;
+}
+.card6 {
+  grid-area: card6;
+}
+.card7 {
+  grid-area: card7;
+}
+.card8 {
+  grid-area: card8;
 }
 
-.card2, .card3, .card5, .card6, .card8 {
-	padding: var(--spacing-300);
+.card1,
+.card7,
+.card4 {
+  padding: var(--spacing-400);
+  display: flex;
+  flex-direction: column;
+}
+
+.card2,
+.card3,
+.card5,
+.card6,
+.card8 {
+  padding: var(--spacing-300);
 }
 
 /* Social Media - card1 styles */
 .card1 {
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-}
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
-.card1 h1{
-	color: var(--white);
-	padding-bottom: var(--spacing-300);
-}
+  h1 {
+    padding-bottom: var(--spacing-300);
+    color: var(--white);
+  }
 
-.card1 span {
-	color: var(--yellow-500);
-}
+  span {
+    color: var(--yellow-500);
+  }
 
-.card1 p {
-	color: var(--white);
-}
+  p {
+    color: var(--white);
+  }
 
-.card1 img {
-	height: 32px;
-	width: 190px
+  img {
+    height: 32px;
+    width: 190px;
+  }
 }
 
 /* Manage multiple accounts - card2 styles */
 .card2 {
-	overflow: hidden;
-}
+  overflow: hidden;
 
-.card h3 {
-	padding-bottom: var(--spacing-300);
-}
+  h3 {
+    padding-bottom: var(--spacing-300);
+  }
 
-.card2 img {
-	height: 66px;
-	width: auto;
+  img {
+    height: 66px;
+    width: auto;
+  }
 }
 
 /* Maintain a consistent posting - card3 styles */
 .card3 {
- overflow: hidden;
+  overflow: hidden;
+
+  h3 {
+    padding-bottom: var(--spacing-300);
+  }
+
+  img {
+    width: 208px;
+  }
 }
 
-.card3 h3 {
-	padding-bottom: var(--spacing-300);
-}
+/* Schedule to social media - card4 styles */
+.card4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
 
-.card3 img {
-	width: 208px;
+  img {
+    padding: var(--spacing-300) 0px;
+    height: 318px;
+    width: 357px;
+  }
 }
 
 /* Grow followers - card5 styles */
 .card5 {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-}
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 
-.card5 h2 {
-	color: var(--white);
-}
+  h2 {
+    color: var(--white);
+  }
 
-.card5 img {
-	height: 200px;
-	width: 227px;
+  img {
+    height: 200px;
+    width: 227px;
+  }
 }
 
 /* Fast audience growth - card6 styles */
 .card6 {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-.card6 img {
-	height: 66px;
-	width: 178px;
+  img {
+    height: 66px;
+    width: 178px;
+  }
 }
 
 /* Create and schedule content - card7 styles */
 
 .card7 {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-.card7 h2 {
-	padding-bottom: var(--spacing-300);
-}
+  h2 {
+    padding-bottom: var(--spacing-300);
+  }
 
-.card7 img {
-	height: 90px;
-	width: 190px;
-}
+  img {
+    height: 90px;
+    width: 190px;
+  }
 
-.card7 i {
-	color: #7551dc;
+  i {
+    color: var(--purple-500);
+  }
 }
 
 /* White your content with A1 - card8 style */
 
 .card8 {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    width: 219px;
+    height: 222px;
+  }
 }
 
-.card8 img {
-	width: 219px;
-	height: 222px;
+/* Tablet breakpoint */
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+	grid-template-rows: auto;
+	grid-template-areas: none;
+	gap: 16px;
+  }
+
+  /* Reset grid-area and other grid properties for all cards */
+  .card1,
+  .card2,
+  .card3,
+  .card4,
+  .card5,
+  .card6,
+  .card7,
+  .card8 {
+    grid-area: unset;
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  /* Full-width cards */
+  .card1,
+  .card4,
+  .card5,
+  .card6 {
+    grid-column: 1 / -1; /* Span both columns */
+  }
+
+  /* Two-column cards */
+  .card2 {
+    grid-column: 1 / 2;
+  }
+
+  .card3 {
+    grid-column: 2 / 3;
+  }
+
+  .card7 {
+    grid-column: 1 / 2;
+  }
+
+  .card8 {
+	grid-column: 2 / 3;
+  }
 }
 
+@media (max-width: 375px) {
+  h1 {
+    font-size: 46px;
+  }
+  .container {
+    padding: var(--spacing-400) var(--spacing-200);
+  }
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: none;
+  }
+  /* Reset grid-area for all cards */
+  .card1,
+  .card2,
+  .card3,
+  .card4,
+  .card5,
+  .card6,
+  .card7,
+  .card8 {
+    grid-area: unset;
+    padding: var(--spacing-200);
+  }
+
+  .card1 {
+    padding: var(--spacing-500) var(--spacing-200);
+  }
+
+  .card4 {
+    img {
+      width: 100%;
+      height: 279px;
+    }
+  }
+
+  .card5 {
+    flex-direction: column;
+  }
+
+  .card7,
+  .card8 {
+    align-items: flex-start;
+  }
+}
