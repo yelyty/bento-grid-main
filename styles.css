@@ -6,7 +6,7 @@
 ::after {
   padding: 0;
   margin: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 body {
@@ -71,7 +71,6 @@ body {
   align-items: center;
   justify-content: center;
   max-width: 1440px;
-  padding: 2% 10%;
   margin: 0 auto;
 }
 
@@ -220,6 +219,9 @@ p {
 /* Manage multiple accounts - card2 styles */
 .card2 {
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   h3 {
     padding-bottom: var(--spacing-300);
@@ -326,11 +328,15 @@ p {
 
 /* Tablet breakpoint */
 @media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-400) var(--spacing-500);
+  }
+
   .bento-grid {
     grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-	grid-template-rows: auto;
-	grid-template-areas: none;
-	gap: 16px;
+    grid-template-rows: auto;
+    grid-template-areas: none;
+    gap: 16px;
   }
 
   /* Reset grid-area and other grid properties for all cards */
@@ -369,7 +375,14 @@ p {
   }
 
   .card8 {
-	grid-column: 2 / 3;
+    grid-column: 2 / 3;
+  }
+
+  .card7,
+  .card8 {
+    display: flex;
+    align-items: flex-start;
+    padding-left: var(--spacing-300);
   }
 }
 
