@@ -54,6 +54,7 @@ body {
   --text-preset-4-weight: 400;
 
   /* Spacing */
+  --spacing-600: 60px;
   --spacing-500: 40px;
   --spacing-400: 32px;
   --spacing-300: 24px;
@@ -70,8 +71,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1440px;
-  margin: 0 auto;
+  padding: var(--spacing-600) var(--spacing-600);
 }
 
 .card {
@@ -148,6 +148,9 @@ p {
     "card8 card6 card5 card5"
     "card8 card6 card5 card5";
   max-width: var(--breakpoint-lg);
+  overflow: visible;
+  width: 100%;
+  justify-content: center;
 }
 
 .card1 {
@@ -219,7 +222,6 @@ p {
 /* Manage multiple accounts - card2 styles */
 .card2 {
   overflow: hidden;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
 
@@ -327,7 +329,7 @@ p {
 }
 
 /* Tablet breakpoint */
-@media (max-width: 768px) {
+@media (min-width: 376px) and (max-width: 768px) {
   .container {
     padding: var(--spacing-400) var(--spacing-500);
   }
